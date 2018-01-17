@@ -1,9 +1,13 @@
 feature 'Entering players name' do
   scenario 'submitting names' do
-    visit('/')
-    fill_in :player_1_name, with: 'Reena'
-    fill_in :player_2_name, with: 'Alex'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content "Reena vs. Alex"
+  end
+end
+
+feature 'See hit points' do
+  scenario "printing players 2's hit points" do
+    sign_in_and_play
+    expect(page).to have_content "Alex: 60HP"
   end
 end
