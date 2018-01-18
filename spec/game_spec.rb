@@ -8,7 +8,7 @@ describe Game do
   describe '#attack' do
     it "checks if games recieves reduce_points" do
       expect(player_2).to receive(:reduce_points)
-      game.attack(player_2)
+      game.attack
     end
   end
 
@@ -34,6 +34,7 @@ describe Game do
     it 'switches the current_player' do
       game.switch_turns
       expect(game.current_player).to eq player_2
+      expect(game.opponent).to eq player_1
     end
 
   end

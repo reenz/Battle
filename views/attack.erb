@@ -1,5 +1,8 @@
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+<body bgcolor="#0BACBB">
 
-<form action="/play" method="get">
-  <input type="submit" value="Hit">
+<%= @game.current_player.name %> attacked <%= @game.opponent.name %>
+
+<form action="/switch-turns" method="get">
+  <input type="submit" value="Continue">
 </form>
+</body>
