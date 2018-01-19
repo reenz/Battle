@@ -1,6 +1,8 @@
 <body bgcolor="#0BACBB">
 
-<%= @game.current_player.name %> attacked <%= @game.opponent.name %>
+  <iframe src="https://giphy.com/embed/iYssqHbOcvL20" width="480" height="361"
+  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br>
+<%= @game.current_player.name %> attacked <%= @game.opponent.name %><br>
 
 <form action="/switch-turns" method="get">
   <input type="submit" value="Continue">
