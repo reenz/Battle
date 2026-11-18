@@ -3,13 +3,13 @@
 width="480" height="197" frameBorder="0" class="giphy-embed"
 allowFullScreen></iframe></br></br>
 
-<%= @game.player_1.name %> vs. <%= @game.player_2.name %> <br>
+<%= h(@game.player_1.name) %> vs. <%= h(@game.player_2.name) %> <br>
 
-<%= @game.player_1.name%>: <%= @game.player_1.hit_points %>HP<br>
+<%= h(@game.player_1.name) %>: <%= @game.player_1.hit_points %>HP<br>
 
-<%= @game.player_2.name%>: <%= @game.player_2.hit_points %>HP<br>
+<%= h(@game.player_2.name) %>: <%= @game.player_2.hit_points %>HP<br>
 
-<a href="/attack">Attack</a><br>
+<form action="/attack" method="post"><input type="hidden" name="csrf_token" value="<%= csrf_token %>"><button type="submit">Attack</button></form><br>
 
-<%= @game.current_player.name %> turn <br>
+<%= h(@game.current_player.name) %> turn <br>
 </body>
